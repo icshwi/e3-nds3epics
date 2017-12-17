@@ -1,6 +1,8 @@
 [submodule "e3-env"]
 	path = e3-env
 	url = https://github.com/icshwi/e3-env
+	ignore = dirty
 [submodule "nds3epics"]
 	path = nds3epics
 	url = https://bitbucket.org/europeanspallationsource/m-epics-nds3epics
+	ignore = all

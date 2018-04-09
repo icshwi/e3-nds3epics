@@ -34,7 +34,8 @@ install_module: uninstall db
 ## Uninstall : $(E3_MODULE_NAME)
 uninstall: conf
 	$(QUIET) $(SUDOBASH) '$(E3_MODULE_MAKE_CMDS) uninstall'
-
+	$(SUDO) find $(E3_SITELIBS_PATH) -xtype l -delete
+	
 ## Build the EPICS Module : $(E3_MODULE_NAME)
 # Build always the Module with the EPICS_MODULES_TAG
 build: conf checkout
@@ -82,7 +83,7 @@ install_links: $(INSTALLED_EPICS_BASE_ARCHS)
 	$(SUDO) ln -snf $(E3_MODULES_INSTALL_LOCATION_DB)  $(E3_MODULES_INSTALL_LOCATION_DB_LINK)
 	$(SUDO) ln -snf $(E3_MODULES_INSTALL_LOCATION_BIN) $(E3_MODULES_INSTALL_LOCATION_BIN_LINK)
 	$(SUDO) ln -sf  $(E3_MODULES_INSTALL_LOCATION_DBD) $(E3_MODULES_INSTALL_LOCATION_DBD_LINK)
-
+	$(SUDO) find $(E3_SITELIBS_PATH) -xtype l -delete 
 
 $(INSTALLED_EPICS_BASE_ARCHS):
 	$(SUDO) mkdir -p $(E3_SITELIBS_PATH)/$@

@@ -1,4 +1,4 @@
 [submodule "nds3epics"]
 	path = nds3epics
 	url = https://bitbucket.org/europeanspallationsource/m-epics-nds3epics
-	ignore = all
+	ignore = dirty

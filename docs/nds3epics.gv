@@ -1,0 +1,10 @@
+digraph nds3epics {
+node [shape=record];
+base [label="base 7.0.3"]
+require [label="require 3.1.2"]
+ASYN [label="ASYN 4.36.0"]
+NDS3 [label="NDS3 3.0.0"]
+nds3epics [label="nds3epics f4832d2"]
+base -> require -> { ASYN,NDS3 } ->  {  nds3epics  } 
+} 
+
